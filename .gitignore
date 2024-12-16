@@ -1,4 +1,6 @@
-.Rproj.user
+Data/raw/
+Data/processed/
+*.Rproj
 .Rhistory
 .RData
-.Ruserdata
+
