@@ -1,0 +1,19 @@
+---
+title: "Analyse Exploratoire des Données"
+author: "Black Phoenix Data Analysis"
+format:
+  html:
+    css: ../Documents/Templates/black_phoenix_professional.css
+    toc: true
+    number-sections: true
+---
+
+<div id="logo-small">
+  <img src="../Images/Black_Phoenix_Data_Analysis_Logo.jpg" alt="Logo Black Phoenix">
+</div>
+
+# Analyse Exploratoire des Données
+
+Ce document présente l'analyse exploratoire des données (EDA).
+
+---

@@ -1,0 +1,21 @@
+---
+title: "Analyse Data Science Portfolio"
+format:
+  html:
+    css: Documents/Templates/black_phoenix_professional.css
+    toc: true
+    number-sections: true
+---
+
+
+<div id="logo-index">
+  <img src="Images/Black_Phoenix_Data_Analysis_Logo.jpg" alt="Logo Black Phoenix">
+</div>
+
+# Page d'Accueil
+
+Bienvenue dans le projet **Analyse Data Science Portfolio** de Black Phoenix.
+
+---
+
+

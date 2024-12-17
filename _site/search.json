@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "Documents/Templates/black_phoenix_template.html",
+    "href": "Documents/Templates/black_phoenix_template.html",
+    "title": "Template Black Phoenix",
+    "section": "",
+    "text": "Ajoutez ici votre texte, vos graphiques et vos analyses en utilisant Quarto.\n\nExemple de lien : Cliquez ici\nExemple de tableau :\n\n\n\n\nVariable\nValeur\n\n\n\n\nA\n10\n\n\nB\n20\n\n\n\n\n\n\n\n\nCrée un nouveau document Quarto (File &gt; New File &gt; Quarto Document).\nUtilise le template :\nRemplace le contenu par :\n```yaml —\ntitle: “Test du Template Black Phoenix”\nauthor: “Black Phoenix Data Analysis”\nformat:\nhtml:\ncss: Templates/black_phoenix_styles.css\ntoc: true\nnumber-sections: true\n—"
+  },
+  {
+    "objectID": "Documents/Templates/black_phoenix_template.html#sous-titre",
+    "href": "Documents/Templates/black_phoenix_template.html#sous-titre",
+    "title": "Template Black Phoenix",
+    "section": "",
+    "text": "Ajoutez ici votre texte, vos graphiques et vos analyses en utilisant Quarto.\n\nExemple de lien : Cliquez ici\nExemple de tableau :\n\n\n\n\nVariable\nValeur\n\n\n\n\nA\n10\n\n\nB\n20"
+  },
+  {
+    "objectID": "Documents/Templates/black_phoenix_template.html#étape-4-tester-le-template",
+    "href": "Documents/Templates/black_phoenix_template.html#étape-4-tester-le-template",
+    "title": "Template Black Phoenix",
+    "section": "",
+    "text": "Crée un nouveau document Quarto (File &gt; New File &gt; Quarto Document).\nUtilise le template :\nRemplace le contenu par :\n```yaml —\ntitle: “Test du Template Black Phoenix”\nauthor: “Black Phoenix Data Analysis”\nformat:\nhtml:\ncss: Templates/black_phoenix_styles.css\ntoc: true\nnumber-sections: true\n—"
+  },
+  {
+    "objectID": "Analyse_Data_Science_Portfolio.html",
+    "href": "Analyse_Data_Science_Portfolio.html",
+    "title": "Analyse_Data_Science_Portfolio",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\n1 + 1\n\n[1] 2\n\n\ntest final"
+  },
+  {
+    "objectID": "Analyse_Data_Science_Portfolio.html#quarto",
+    "href": "Analyse_Data_Science_Portfolio.html#quarto",
+    "title": "Analyse_Data_Science_Portfolio",
+    "section": "",
+    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\n1 + 1\n\n[1] 2\n\n\ntest final"
+  },
+  {
+    "objectID": "Documents/Doc1_Analyse_Exploratoire.html",
+    "href": "Documents/Doc1_Analyse_Exploratoire.html",
+    "title": "Analyse Exploratoire des Données",
+    "section": "",
+    "text": "1 Analyse Exploratoire des Données\nCe document présente l’analyse exploratoire des données (EDA)."
+  },
+  {
+    "objectID": "Documents/Templates/index.html",
+    "href": "Documents/Templates/index.html",
+    "title": "Page d’accueil",
+    "section": "",
+    "text": "1 Bienvenue dans le Projet Black Phoenix"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Analyse Data Science Portfolio",
+    "section": "",
+    "text": "1 Page d’Accueil\nBienvenue dans le projet Analyse Data Science Portfolio de Black Phoenix."
+  }
+]

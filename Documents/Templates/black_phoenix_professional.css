@@ -1,0 +1,88 @@
+/*-- scss:defaults --*/
+/* Variables de couleurs Black Phoenix */
+$primary-color: #ff784e; /* Orange Black Phoenix */
+$secondary-color: #607d8b; /* Gris bleuté */
+$text-color: #333333; /* Noir */
+$background-color: #ffffff; /* Blanc */
+
+/*-- scss:rules --*/
+/* Style global */
+body {
+  font-family: Arial, sans-serif;
+  color: $text-color;
+  background-color: $background-color;
+  line-height: 1.6;
+}
+
+/* Titres */
+h1, h2, h3 {
+  font-family: "Verdana", sans-serif;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 28px;
+  color: $secondary-color;
+}
+
+h3 {
+  font-size: 24px;
+  color: $text-color;
+}
+
+/* Logo en grand pour l'index */
+#logo-index img {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+}
+
+/* Logo en petit pour les autres pages */
+#logo-small img {
+  display: block;
+  margin: 10px auto; /* Centré avec un petit espacement */
+  width: 150px;       /* Taille fixe pour le logo petit */
+  max-width: 100%;   /* Évite un agrandissement excessif */
+  height: auto;      /* Garde les proportions originales */
+}
+
+/* Liens */
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: $secondary-color;
+}
+
+/* Tableaux */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+th {
+  background-color: $secondary-color;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

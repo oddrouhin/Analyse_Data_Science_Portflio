@@ -1,6 +1,0 @@
----
-title: "Template Black Phoenix"
-output: html_document
----
-
-# Contenu du Template

@@ -1,5 +1,21 @@
 project:
-  title: "Analyse_Data_Science_Portfolio"
+  type: website
+  output-dir: _site
 
-editor: visual
+website:
+  title: "Analyse Data Science Portfolio"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Accueil
+      - href: Documents/Doc1_Analyse_Exploratoire.qmd
+        text: Analyse Exploratoire
+    right:
+      - icon: github
+        href: https://github.com/oddrouhin/Analyse_Data_Science_Portflio
 
+format:
+  html:
+    theme: Documents/Templates/black_phoenix_styles.css
+    toc: true
+    number-sections: true

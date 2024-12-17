@@ -5,3 +5,5 @@ Data/processed/
 .RData
 
 .Rproj.user
+
+/.quarto/
