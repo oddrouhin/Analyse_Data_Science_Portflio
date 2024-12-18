@@ -1,19 +1,34 @@
 ---
 title: "Analyse Exploratoire des Données"
 author: "Black Phoenix Data Analysis"
+date: "01 Janvier 2025"
 format:
   html:
-    css: ../Documents/Templates/black_phoenix_professional.css
     toc: true
+    toc-depth: 2
     number-sections: true
+    theme: "null"
+    css: Templates/black_phoenix_professional.css
+    include-in-header: Templates/header-styles.html
 ---
 
-<div id="logo-small">
-  <img src="../Images/Black_Phoenix_Data_Analysis_Logo.jpg" alt="Logo Black Phoenix">
-</div>
 
-# Analyse Exploratoire des Données
 
-Ce document présente l'analyse exploratoire des données (EDA).
 
----
+# Introduction
+
+Ce document présente l'analyse exploratoire des données (EDA) réalisée dans le cadre du projet **Black Phoenix**.
+
+## 1. Résumé Statistique
+
+Lorem ipsum dolor sit amet...
+
+## 2. Visualisation des Données
+
+- Graphique 1 : ...
+- Graphique 2 : ...
+
+## 3. Conclusion
+
+Lorem ipsum dolor sit amet...
+

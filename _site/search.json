@@ -1,58 +1,51 @@
 [
   {
-    "objectID": "Documents/Templates/black_phoenix_template.html",
-    "href": "Documents/Templates/black_phoenix_template.html",
-    "title": "Template Black Phoenix",
-    "section": "",
-    "text": "Ajoutez ici votre texte, vos graphiques et vos analyses en utilisant Quarto.\n\nExemple de lien : Cliquez ici\nExemple de tableau :\n\n\n\n\nVariable\nValeur\n\n\n\n\nA\n10\n\n\nB\n20\n\n\n\n\n\n\n\n\nCrée un nouveau document Quarto (File &gt; New File &gt; Quarto Document).\nUtilise le template :\nRemplace le contenu par :\n```yaml —\ntitle: “Test du Template Black Phoenix”\nauthor: “Black Phoenix Data Analysis”\nformat:\nhtml:\ncss: Templates/black_phoenix_styles.css\ntoc: true\nnumber-sections: true\n—"
+    "objectID": "index.html#contenu-du-portfolio",
+    "href": "index.html#contenu-du-portfolio",
+    "title": "Analyse Data Science Portfolio",
+    "section": "1.1 Contenu du Portfolio",
+    "text": "1.1 Contenu du Portfolio\n\nAnalyse Exploratoire des Données (EDA)\nPrésentation des données, visualisation initiale, et résumé statistique.\nSegmentation des Données\nApplication des algorithmes K-means et CAH pour segmenter les données.\nModélisation Prédictive\nModèles statistiques et machine learning pour prédire les variables cibles.\nSynthèse Finale\nRapport final consolidant les résultats et conclusions des analyses."
   },
   {
-    "objectID": "Documents/Templates/black_phoenix_template.html#sous-titre",
-    "href": "Documents/Templates/black_phoenix_template.html#sous-titre",
-    "title": "Template Black Phoenix",
-    "section": "",
-    "text": "Ajoutez ici votre texte, vos graphiques et vos analyses en utilisant Quarto.\n\nExemple de lien : Cliquez ici\nExemple de tableau :\n\n\n\n\nVariable\nValeur\n\n\n\n\nA\n10\n\n\nB\n20"
+    "objectID": "index.html#structure-du-projet",
+    "href": "index.html#structure-du-projet",
+    "title": "Analyse Data Science Portfolio",
+    "section": "1.2 Structure du Projet",
+    "text": "1.2 Structure du Projet\nLe portfolio est organisé de manière à faciliter la compréhension et l’exploration des données. Chaque document représente une étape du projet."
   },
   {
-    "objectID": "Documents/Templates/black_phoenix_template.html#étape-4-tester-le-template",
-    "href": "Documents/Templates/black_phoenix_template.html#étape-4-tester-le-template",
-    "title": "Template Black Phoenix",
-    "section": "",
-    "text": "Crée un nouveau document Quarto (File &gt; New File &gt; Quarto Document).\nUtilise le template :\nRemplace le contenu par :\n```yaml —\ntitle: “Test du Template Black Phoenix”\nauthor: “Black Phoenix Data Analysis”\nformat:\nhtml:\ncss: Templates/black_phoenix_styles.css\ntoc: true\nnumber-sections: true\n—"
-  },
-  {
-    "objectID": "Analyse_Data_Science_Portfolio.html",
-    "href": "Analyse_Data_Science_Portfolio.html",
-    "title": "Analyse_Data_Science_Portfolio",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\n1 + 1\n\n[1] 2\n\n\ntest final"
-  },
-  {
-    "objectID": "Analyse_Data_Science_Portfolio.html#quarto",
-    "href": "Analyse_Data_Science_Portfolio.html#quarto",
-    "title": "Analyse_Data_Science_Portfolio",
-    "section": "",
-    "text": "Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\n\n1 + 1\n\n[1] 2\n\n\ntest final"
+    "objectID": "index.html#à-propos",
+    "href": "index.html#à-propos",
+    "title": "Analyse Data Science Portfolio",
+    "section": "1.3 À propos",
+    "text": "1.3 À propos\nCe portfolio a été développé par Black Phoenix Data Analysis dans le cadre d’une analyse approfondie pour un projet Data Science.\nL’identité visuelle et les analyses s’appuient sur des pratiques professionnelles et des outils avancés."
   },
   {
     "objectID": "Documents/Doc1_Analyse_Exploratoire.html",
     "href": "Documents/Doc1_Analyse_Exploratoire.html",
     "title": "Analyse Exploratoire des Données",
     "section": "",
-    "text": "1 Analyse Exploratoire des Données\nCe document présente l’analyse exploratoire des données (EDA)."
+    "text": "Ce document présente l’analyse exploratoire des données (EDA) réalisée dans le cadre du projet Black Phoenix.\n\n\nLorem ipsum dolor sit amet…\n\n\n\n\nGraphique 1 : …\nGraphique 2 : …\n\n\n\n\nLorem ipsum dolor sit amet…"
   },
   {
-    "objectID": "Documents/Templates/index.html",
-    "href": "Documents/Templates/index.html",
-    "title": "Page d’accueil",
+    "objectID": "Documents/Doc1_Analyse_Exploratoire.html#résumé-statistique",
+    "href": "Documents/Doc1_Analyse_Exploratoire.html#résumé-statistique",
+    "title": "Analyse Exploratoire des Données",
     "section": "",
-    "text": "1 Bienvenue dans le Projet Black Phoenix"
+    "text": "Lorem ipsum dolor sit amet…"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Analyse Data Science Portfolio",
+    "objectID": "Documents/Doc1_Analyse_Exploratoire.html#visualisation-des-données",
+    "href": "Documents/Doc1_Analyse_Exploratoire.html#visualisation-des-données",
+    "title": "Analyse Exploratoire des Données",
     "section": "",
-    "text": "1 Page d’Accueil\nBienvenue dans le projet Analyse Data Science Portfolio de Black Phoenix."
+    "text": "Graphique 1 : …\nGraphique 2 : …"
+  },
+  {
+    "objectID": "Documents/Doc1_Analyse_Exploratoire.html#conclusion",
+    "href": "Documents/Doc1_Analyse_Exploratoire.html#conclusion",
+    "title": "Analyse Exploratoire des Données",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet…"
   }
 ]

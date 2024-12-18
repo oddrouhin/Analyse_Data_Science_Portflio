@@ -1,88 +1,107 @@
-/*-- scss:defaults --*/
-/* Variables de couleurs Black Phoenix */
-$primary-color: #ff784e; /* Orange Black Phoenix */
-$secondary-color: #607d8b; /* Gris bleuté */
-$text-color: #333333; /* Noir */
-$background-color: #ffffff; /* Blanc */
-
-/*-- scss:rules --*/
-/* Style global */
+/* Corps global */
 body {
   font-family: Arial, sans-serif;
-  color: $text-color;
-  background-color: $background-color;
   line-height: 1.6;
+  color: #333333;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
 }
 
-/* Titres */
-h1, h2, h3 {
-  font-family: "Verdana", sans-serif;
+/* Navigation Bar */
+.navbar {
+  background-color: #607D8B; /* Gris bleu */
+  border-bottom: 3px solid #FF784E; /* Liseré orange */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 40px; /* Agrandir légèrement le logo */
+  margin-right: 10px;
+}
+
+.navbar-title {
+  font-size: 20px;
   font-weight: bold;
-  color: $primary-color;
+  color: #ffffff;
 }
 
-h1 {
-  font-size: 32px;
+.nav-link {
+  color: #ffffff;
+  margin-right: 15px;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #FF784E; /* Indicateur de lien actif */
+}
+
+/* Contenu principal */
+main.content {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Table des matières (TOC) */
+#TOC {
+  background-color: #F9F9F9; /* Fond clair */
+  border-left: 4px solid #607D8B; /* Liseré gris bleu */
+  padding: 15px;
+}
+
+#TOC h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+}
+
+#TOC ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#TOC ul li {
+  margin-bottom: 10px;
+}
+
+#TOC ul li a {
+  text-decoration: none;
+  color: #607D8B;
+}
+
+#TOC ul li a:hover {
+  color: #FF784E;
+}
+
+
+/* Pied de page */
+.footer {
   text-align: center;
-  margin-bottom: 20px;
+  font-size: 12px;
+  color: #607D8B;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px solid #dddddd;
 }
 
-h2 {
-  font-size: 28px;
-  color: $secondary-color;
-}
-
-h3 {
-  font-size: 24px;
-  color: $text-color;
-}
-
-/* Logo en grand pour l'index */
-#logo-index img {
+/* Taille du logo sur la page index */
+#logo-large {
   display: block;
-  margin: 0 auto;
-  width: 300px;
+  margin: 0 auto; /* Centré horizontalement */
+  width: 400px; /* Largeur fixe */
+  height: auto; /* Conserve le ratio de l'image */
 }
 
-/* Logo en petit pour les autres pages */
-#logo-small img {
-  display: block;
-  margin: 10px auto; /* Centré avec un petit espacement */
-  width: 150px;       /* Taille fixe pour le logo petit */
-  max-width: 100%;   /* Évite un agrandissement excessif */
-  height: auto;      /* Garde les proportions originales */
-}
-
-/* Liens */
 a {
-  color: $primary-color;
+  color: #FF784E; /* Orange Black Phoenix */
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: $secondary-color;
 }
 
-/* Tableaux */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 20px 0;
-}
-
-th {
-  background-color: $secondary-color;
-  color: white;
-  padding: 10px;
-  text-align: center;
-}
-
-td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}

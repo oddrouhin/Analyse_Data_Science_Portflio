@@ -8,14 +8,20 @@ website:
     left:
       - href: index.qmd
         text: Accueil
-      - href: Documents/Doc1_Analyse_Exploratoire.qmd
+      - href: Documents/Doc1_Analyse_Exploratoire.html
         text: Analyse Exploratoire
     right:
       - icon: github
         href: https://github.com/oddrouhin/Analyse_Data_Science_Portflio
+  page-footer:
+    center: "© 2025 Black Phoenix Data Analysis"
 
 format:
   html:
-    theme: Documents/Templates/black_phoenix_styles.css
+    theme: "null"
+    css:
+      - Templates/black_phoenix_professional.css
     toc: true
+    toc-depth: 2
+    toc-location: left
     number-sections: true

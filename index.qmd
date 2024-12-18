@@ -1,21 +1,49 @@
 ---
 title: "Analyse Data Science Portfolio"
+author: "Black Phoenix Data Analysis"
+date: "01 Janvier 2025"
 format:
   html:
     css: Documents/Templates/black_phoenix_professional.css
     toc: true
     number-sections: true
+    theme: cosmo
 ---
 
+<header><img src="Images/Black_Phoenix_Data_Analysis_Logo.jpg" alt="Logo Black Phoenix" id="logo-large"/></header>
 
-<div id="logo-index">
-  <img src="Images/Black_Phoenix_Data_Analysis_Logo.jpg" alt="Logo Black Phoenix">
-</div>
+# Bienvenue sur l'Analyse Data Science Portfolio
 
-# Page d'Accueil
+Cette page d'accueil présente un résumé des analyses réalisées dans le cadre du projet **Black Phoenix Data Analysis**. Vous y trouverez une structure organisée et des documents détaillant chaque étape du projet.
 
-Bienvenue dans le projet **Analyse Data Science Portfolio** de Black Phoenix.
+------------------------------------------------------------------------
 
----
+## Contenu du Portfolio
 
+-   [**Analyse Exploratoire des Données (EDA)**](Doc1_Analyse_Exploratoire.html)\
+    Présentation des données, visualisation initiale, et résumé statistique.
+
+-   **Segmentation des Données**\
+    Application des algorithmes K-means et CAH pour segmenter les données.
+
+-   **Modélisation Prédictive**\
+    Modèles statistiques et machine learning pour prédire les variables cibles.
+
+-   **Synthèse Finale**\
+    Rapport final consolidant les résultats et conclusions des analyses.
+
+------------------------------------------------------------------------
+
+## Structure du Projet
+
+Le portfolio est organisé de manière à faciliter la compréhension et l'exploration des données. Chaque document représente une étape du projet.
+
+------------------------------------------------------------------------
+
+## À propos
+
+Ce portfolio a été développé par **Black Phoenix Data Analysis** dans le cadre d'une analyse approfondie pour un projet Data Science.\
+L'identité visuelle et les analyses s'appuient sur des pratiques professionnelles et des outils avancés.
+
+------------------------------------------------------------------------
 
