@@ -1,7 +1,7 @@
 ---
 title: "Analyse Exploratoire des Données"
 author: "Black Phoenix Data Analysis"
-date: "01 Janvier 2025"
+date: "19 Décembre 2024"
 format:
   html:
     toc: true
@@ -9,26 +9,193 @@ format:
     number-sections: true
     theme: "null"
     css: Templates/black_phoenix_professional.css
-    include-in-header: Templates/header-styles.html
+    code-fold: true
+execute:
+  warning: false
+  message: false
 ---
 
+# Analyse Exploratoire des Données
+
+Dans ce document, nous explorons les données brutes pour dégager des informations essentielles et préparer les prochaines étapes d'analyse.
+
+## Chargement des Données
+
+Lers données ont été importées dans le script 01_import_data.R et les 3 jeux de données sont dans le fichier :
+
+`Data/processed/imported_data.RData`
+
+```{r}
+library(tidyverse)
+library(kableExtra)
 
 
 
-# Introduction
+# Charger les données sauvegardées
+load("C:/Users/od-sciences/Documents/Analyse_Data_Science_Portfolio/Data/processed/imported_data.RData")
 
-Ce document présente l'analyse exploratoire des données (EDA) réalisée dans le cadre du projet **Black Phoenix**.
+# Aperçu des dimensions des fichiers
+data_summary <- data.frame(
+  Fichier = c("ventes_train", "ventes_test", "store"),
+  Lignes = c(nrow(ventes_train), nrow(ventes_test), nrow(store)),
+  Colonnes = c(ncol(ventes_train), ncol(ventes_test), ncol(store))
+)
 
-## 1. Résumé Statistique
 
-Lorem ipsum dolor sit amet...
 
-## 2. Visualisation des Données
+```
 
-- Graphique 1 : ...
-- Graphique 2 : ...
+## Tableaux des Dimensions
 
-## 3. Conclusion
+Voici les dimensions des fichiers de données.
 
-Lorem ipsum dolor sit amet...
+```{r}
+# Visualisation des dimensions
+data_summary %>%
+  kbl(caption = "Dimensions des Fichiers de Données") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE, position = "center") %>%
+  column_spec(1, bold = TRUE, color = "#ff784e") %>%
+  row_spec(0, background = "#607d8b", color = "white", bold = TRUE) %>%
+  row_spec(1:nrow(data_summary), background = "#f9f9f9", color = "#333333")
 
+```
+
+## Résumé des variables
+
+```{r}
+
+
+# Résumé des variables pour ventes_train
+summary_ventes_train <- data.frame(
+  Variable = colnames(ventes_train),
+  Type = sapply(ventes_train, class),
+  Aperçu = sapply(ventes_train, function(x) {
+    preview <- paste0(head(x, 3), collapse = ", ")
+    if (nchar(preview) > 50) {
+      paste0(substr(preview, 1, 50), "...")
+    } else {
+      preview
+    }
+  })
+)
+
+# Afficher le tableau formaté
+library(kableExtra)
+
+summary_ventes_train %>%
+  kbl(caption = "Résumé des Variables pour ventes_train") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE, position = "center") %>%
+  column_spec(1, bold = TRUE, color = "#ff784e") %>%
+  row_spec(0, background = "#607d8b", color = "white", bold = TRUE)
+
+```
+
+```{r}
+# Résumé des variables pour ventes_test
+summary_ventes_test <- data.frame(
+  Variable = colnames(ventes_test),
+  Type = sapply(ventes_test, class),
+  Aperçu = sapply(ventes_test, function(x) {
+    preview <- paste0(head(x, 3), collapse = ", ")
+    if (nchar(preview) > 50) {
+      paste0(substr(preview, 1, 50), "...")
+    } else {
+      preview
+    }
+  })
+)
+
+# Afficher le tableau formaté
+summary_ventes_test %>%
+  kbl(caption = "Résumé des Variables pour ventes_test") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE, position = "center") %>%
+  column_spec(1, bold = TRUE, color = "#ff784e") %>%
+  row_spec(0, background = "#607d8b", color = "white", bold = TRUE)
+
+```
+
+```{r}
+# Résumé des variables pour store
+summary_store <- data.frame(
+  Variable = colnames(store),
+  Type = sapply(store, class),
+  Aperçu = sapply(store, function(x) {
+    preview <- paste0(head(x, 3), collapse = ", ")
+    if (nchar(preview) > 50) {
+      paste0(substr(preview, 1, 50), "...")
+    } else {
+      preview
+    }
+  })
+)
+
+# Afficher le tableau formaté
+summary_store %>%
+  kbl(caption = "Résumé des Variables pour store") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE, position = "center") %>%
+  column_spec(1, bold = TRUE, color = "#ff784e") %>%
+  row_spec(0, background = "#607d8b", color = "white", bold = TRUE)
+
+```
+
+## Les données manquantes 
+
+```{r}
+# Résumé des NA pour ventes_train
+na_summary_ventes_train <- data.frame(
+  Variable = colnames(ventes_train),
+  NA_Count = colSums(is.na(ventes_train)),
+  NA_Percentage = round(colSums(is.na(ventes_train)) / nrow(ventes_train) * 100, 1)
+)
+
+# Afficher le tableau formaté
+library(kableExtra)
+
+na_summary_ventes_train %>%
+  kbl(caption = "Résumé des Valeurs Manquantes pour ventes_train") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE, position = "center") %>%
+  column_spec(1, bold = TRUE, color = "#ff784e") %>%
+  row_spec(0, background = "#607d8b", color = "white", bold = TRUE)
+
+```
+
+```{r}
+# Résumé des NA pour ventes_test
+na_summary_ventes_test <- data.frame(
+  Variable = colnames(ventes_test),
+  NA_Count = colSums(is.na(ventes_test)),
+  NA_Percentage = round(colSums(is.na(ventes_test)) / nrow(ventes_test) * 100, 1)
+)
+
+# Afficher le tableau formaté
+na_summary_ventes_test %>%
+  kbl(caption = "Résumé des Valeurs Manquantes pour ventes_test") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE, position = "center") %>%
+  column_spec(1, bold = TRUE, color = "#ff784e") %>%
+  row_spec(0, background = "#607d8b", color = "white", bold = TRUE)
+
+```
+
+```{r}
+# Résumé des NA pour store
+na_summary_store <- data.frame(
+  Variable = colnames(store),
+  NA_Count = colSums(is.na(store)),
+  NA_Percentage = round(colSums(is.na(store)) / nrow(store) * 100, 1)
+)
+
+# Afficher le tableau formaté
+na_summary_store %>%
+  kbl(caption = "Résumé des Valeurs Manquantes pour store") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE, position = "center") %>%
+  column_spec(1, bold = TRUE, color = "#ff784e") %>%
+  row_spec(0, background = "#607d8b", color = "white", bold = TRUE)
+
+```

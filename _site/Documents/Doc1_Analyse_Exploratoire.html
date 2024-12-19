@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Black Phoenix Data Analysis">
-<meta name="dcterms.date" content="2025-01-01">
 
 <title>Analyse Data Science Portfolio - Analyse Exploratoire des Données</title>
 <style>
@@ -21,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -60,21 +93,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<style>
-/* Personnalisation de l'en-tête */
-.navbar {
-  background-color: #607D8B; /* Gris bleu Black Phoenix */
-  border-bottom: 3px solid #FF784E; /* Liseré orange */
-}
 
-.navbar-brand::before {
-  content: url('Black_Phoenix_Data_Analysis_Logo_small.png');
-  display: inline-block;
-  height: 30px;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-</style>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="Templates/black_phoenix_professional.css">
@@ -127,11 +148,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
+  <li><a href="#analyse-exploratoire-des-données" id="toc-analyse-exploratoire-des-données" class="nav-link active" data-scroll-target="#analyse-exploratoire-des-données"><span class="header-section-number">1</span> Analyse Exploratoire des Données</a>
   <ul class="collapse">
-  <li><a href="#résumé-statistique" id="toc-résumé-statistique" class="nav-link" data-scroll-target="#résumé-statistique"><span class="header-section-number">1.1</span> 1. Résumé Statistique</a></li>
-  <li><a href="#visualisation-des-données" id="toc-visualisation-des-données" class="nav-link" data-scroll-target="#visualisation-des-données"><span class="header-section-number">1.2</span> 2. Visualisation des Données</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">1.3</span> 3. Conclusion</a></li>
+  <li><a href="#chargement-des-données" id="toc-chargement-des-données" class="nav-link" data-scroll-target="#chargement-des-données"><span class="header-section-number">1.1</span> Chargement des Données</a></li>
+  <li><a href="#tableaux-des-dimensions" id="toc-tableaux-des-dimensions" class="nav-link" data-scroll-target="#tableaux-des-dimensions"><span class="header-section-number">1.2</span> Tableaux des Dimensions</a></li>
+  <li><a href="#résumé-des-variables" id="toc-résumé-des-variables" class="nav-link" data-scroll-target="#résumé-des-variables"><span class="header-section-number">1.3</span> Résumé des variables</a></li>
+  <li><a href="#les-données-manquantes" id="toc-les-données-manquantes" class="nav-link" data-scroll-target="#les-données-manquantes"><span class="header-section-number">1.4</span> Les données manquantes</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -162,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 1, 2025</p>
+      <p class="date">Invalid Date</p>
     </div>
   </div>
   
@@ -172,23 +194,665 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>Ce document présente l’analyse exploratoire des données (EDA) réalisée dans le cadre du projet <strong>Black Phoenix</strong>.</p>
-<section id="résumé-statistique" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="résumé-statistique"><span class="header-section-number">1.1</span> 1. Résumé Statistique</h2>
-<p>Lorem ipsum dolor sit amet…</p>
+<section id="analyse-exploratoire-des-données" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Analyse Exploratoire des Données</h1>
+<p>Dans ce document, nous explorons les données brutes pour dégager des informations essentielles et préparer les prochaines étapes d’analyse.</p>
+<section id="chargement-des-données" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="chargement-des-données"><span class="header-section-number">1.1</span> Chargement des Données</h2>
+<p>Lers données ont été importées dans le script 01_import_data.R et les 3 jeux de données sont dans le fichier :</p>
+<p><code>Data/processed/imported_data.RData</code></p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Charger les données sauvegardées</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"C:/Users/od-sciences/Documents/Analyse_Data_Science_Portfolio/Data/processed/imported_data.RData"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Aperçu des dimensions des fichiers</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>data_summary <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">Fichier =</span> <span class="fu">c</span>(<span class="st">"ventes_train"</span>, <span class="st">"ventes_test"</span>, <span class="st">"store"</span>),</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">Lignes =</span> <span class="fu">c</span>(<span class="fu">nrow</span>(ventes_train), <span class="fu">nrow</span>(ventes_test), <span class="fu">nrow</span>(store)),</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Colonnes =</span> <span class="fu">c</span>(<span class="fu">ncol</span>(ventes_train), <span class="fu">ncol</span>(ventes_test), <span class="fu">ncol</span>(store))</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
-<section id="visualisation-des-données" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="visualisation-des-données"><span class="header-section-number">1.2</span> 2. Visualisation des Données</h2>
-<ul>
-<li>Graphique 1 : …</li>
-<li>Graphique 2 : …</li>
-</ul>
+<section id="tableaux-des-dimensions" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="tableaux-des-dimensions"><span class="header-section-number">1.2</span> Tableaux des Dimensions</h2>
+<p>Voici les dimensions des fichiers de données.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualisation des dimensions</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data_summary <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Dimensions des Fichiers de Données"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>), </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">position =</span> <span class="st">"center"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#ff784e"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">background =</span> <span class="st">"#607d8b"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data_summary), <span class="at">background =</span> <span class="st">"#f9f9f9"</span>, <span class="at">color =</span> <span class="st">"#333333"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
+<caption>Dimensions des Fichiers de Données</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Fichier</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Lignes</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Colonnes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important; color: rgba(51, 51, 51, 255) !important; background-color: rgba(249, 249, 249, 255) !important;">ventes_train</td>
+<td style="text-align: right; color: rgba(51, 51, 51, 255) !important; background-color: rgba(249, 249, 249, 255) !important;">1017209</td>
+<td style="text-align: right; color: rgba(51, 51, 51, 255) !important; background-color: rgba(249, 249, 249, 255) !important;">9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important; color: rgba(51, 51, 51, 255) !important; background-color: rgba(249, 249, 249, 255) !important;">ventes_test</td>
+<td style="text-align: right; color: rgba(51, 51, 51, 255) !important; background-color: rgba(249, 249, 249, 255) !important;">41088</td>
+<td style="text-align: right; color: rgba(51, 51, 51, 255) !important; background-color: rgba(249, 249, 249, 255) !important;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important; color: rgba(51, 51, 51, 255) !important; background-color: rgba(249, 249, 249, 255) !important;">store</td>
+<td style="text-align: right; color: rgba(51, 51, 51, 255) !important; background-color: rgba(249, 249, 249, 255) !important;">1115</td>
+<td style="text-align: right; color: rgba(51, 51, 51, 255) !important; background-color: rgba(249, 249, 249, 255) !important;">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
 </section>
-<section id="conclusion" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">1.3</span> 3. Conclusion</h2>
-<p>Lorem ipsum dolor sit amet…</p>
+<section id="résumé-des-variables" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="résumé-des-variables"><span class="header-section-number">1.3</span> Résumé des variables</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Résumé des variables pour ventes_train</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>summary_ventes_train <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">colnames</span>(ventes_train),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Type =</span> <span class="fu">sapply</span>(ventes_train, class),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  Aperçu <span class="ot">=</span> <span class="fu">sapply</span>(ventes_train, <span class="cf">function</span>(x) {</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    preview <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">head</span>(x, <span class="dv">3</span>), <span class="at">collapse =</span> <span class="st">", "</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">nchar</span>(preview) <span class="sc">&gt;</span> <span class="dv">50</span>) {</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">paste0</span>(<span class="fu">substr</span>(preview, <span class="dv">1</span>, <span class="dv">50</span>), <span class="st">"..."</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>      preview</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le tableau formaté</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>summary_ventes_train <span class="sc">%&gt;%</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Résumé des Variables pour ventes_train"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>), </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">position =</span> <span class="st">"center"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#ff784e"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">background =</span> <span class="st">"#607d8b"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
+<caption>Résumé des Variables pour ventes_train</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Type</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Aperçu</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Store</td>
+<td style="text-align: left;">Store</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">1, 2, 3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">DayOfWeek</td>
+<td style="text-align: left;">DayOfWeek</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">5, 5, 5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Date</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">2015-07-31, 2015-07-31, 2015-07-31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Sales</td>
+<td style="text-align: left;">Sales</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">5263, 6064, 8314</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Customers</td>
+<td style="text-align: left;">Customers</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">555, 625, 821</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Open</td>
+<td style="text-align: left;">Open</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">1, 1, 1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Promo</td>
+<td style="text-align: left;">Promo</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">1, 1, 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">StateHoliday</td>
+<td style="text-align: left;">StateHoliday</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">0, 0, 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">SchoolHoliday</td>
+<td style="text-align: left;">SchoolHoliday</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">1, 1, 1</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Résumé des variables pour ventes_test</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>summary_ventes_test <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">colnames</span>(ventes_test),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Type =</span> <span class="fu">sapply</span>(ventes_test, class),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  Aperçu <span class="ot">=</span> <span class="fu">sapply</span>(ventes_test, <span class="cf">function</span>(x) {</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    preview <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">head</span>(x, <span class="dv">3</span>), <span class="at">collapse =</span> <span class="st">", "</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">nchar</span>(preview) <span class="sc">&gt;</span> <span class="dv">50</span>) {</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">paste0</span>(<span class="fu">substr</span>(preview, <span class="dv">1</span>, <span class="dv">50</span>), <span class="st">"..."</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>      preview</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le tableau formaté</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>summary_ventes_test <span class="sc">%&gt;%</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Résumé des Variables pour ventes_test"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>), </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">position =</span> <span class="st">"center"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#ff784e"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">background =</span> <span class="st">"#607d8b"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
+<caption>Résumé des Variables pour ventes_test</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Type</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Aperçu</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Id</td>
+<td style="text-align: left;">Id</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">1, 2, 3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Store</td>
+<td style="text-align: left;">Store</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">1, 3, 7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">DayOfWeek</td>
+<td style="text-align: left;">DayOfWeek</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">4, 4, 4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Date</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">2015-09-17, 2015-09-17, 2015-09-17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Open</td>
+<td style="text-align: left;">Open</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">1, 1, 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Promo</td>
+<td style="text-align: left;">Promo</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">1, 1, 1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">StateHoliday</td>
+<td style="text-align: left;">StateHoliday</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">0, 0, 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">SchoolHoliday</td>
+<td style="text-align: left;">SchoolHoliday</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">0, 0, 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Résumé des variables pour store</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>summary_store <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">colnames</span>(store),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Type =</span> <span class="fu">sapply</span>(store, class),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  Aperçu <span class="ot">=</span> <span class="fu">sapply</span>(store, <span class="cf">function</span>(x) {</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    preview <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">head</span>(x, <span class="dv">3</span>), <span class="at">collapse =</span> <span class="st">", "</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">nchar</span>(preview) <span class="sc">&gt;</span> <span class="dv">50</span>) {</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">paste0</span>(<span class="fu">substr</span>(preview, <span class="dv">1</span>, <span class="dv">50</span>), <span class="st">"..."</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      preview</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le tableau formaté</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>summary_store <span class="sc">%&gt;%</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Résumé des Variables pour store"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>), </span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">position =</span> <span class="st">"center"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#ff784e"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">background =</span> <span class="st">"#607d8b"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
+<caption>Résumé des Variables pour store</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Type</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Aperçu</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Store</td>
+<td style="text-align: left;">Store</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">1, 2, 3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">StoreType</td>
+<td style="text-align: left;">StoreType</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">c, a, a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Assortment</td>
+<td style="text-align: left;">Assortment</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">a, a, a</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">CompetitionDistance</td>
+<td style="text-align: left;">CompetitionDistance</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">1270, 570, 14130</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">CompetitionOpenSinceMonth</td>
+<td style="text-align: left;">CompetitionOpenSinceMonth</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">9, 11, 12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">CompetitionOpenSinceYear</td>
+<td style="text-align: left;">CompetitionOpenSinceYear</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">2008, 2007, 2006</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Promo2</td>
+<td style="text-align: left;">Promo2</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">0, 1, 1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Promo2SinceWeek</td>
+<td style="text-align: left;">Promo2SinceWeek</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">NA, 13, 14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Promo2SinceYear</td>
+<td style="text-align: left;">Promo2SinceYear</td>
+<td style="text-align: left;">integer</td>
+<td style="text-align: left;">NA, 2010, 2011</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">PromoInterval</td>
+<td style="text-align: left;">PromoInterval</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">, Jan,Apr,Jul,Oct, Jan,Apr,Jul,Oct</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+</section>
+<section id="les-données-manquantes" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="les-données-manquantes"><span class="header-section-number">1.4</span> Les données manquantes</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Résumé des NA pour ventes_train</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>na_summary_ventes_train <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">colnames</span>(ventes_train),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">NA_Count =</span> <span class="fu">colSums</span>(<span class="fu">is.na</span>(ventes_train)),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">NA_Percentage =</span> <span class="fu">round</span>(<span class="fu">colSums</span>(<span class="fu">is.na</span>(ventes_train)) <span class="sc">/</span> <span class="fu">nrow</span>(ventes_train) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le tableau formaté</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>na_summary_ventes_train <span class="sc">%&gt;%</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Résumé des Valeurs Manquantes pour ventes_train"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>), </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">position =</span> <span class="st">"center"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#ff784e"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">background =</span> <span class="st">"#607d8b"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
+<caption>Résumé des Valeurs Manquantes pour ventes_train</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">NA_Count</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">NA_Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Store</td>
+<td style="text-align: left;">Store</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">DayOfWeek</td>
+<td style="text-align: left;">DayOfWeek</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Date</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Sales</td>
+<td style="text-align: left;">Sales</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Customers</td>
+<td style="text-align: left;">Customers</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Open</td>
+<td style="text-align: left;">Open</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Promo</td>
+<td style="text-align: left;">Promo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">StateHoliday</td>
+<td style="text-align: left;">StateHoliday</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">SchoolHoliday</td>
+<td style="text-align: left;">SchoolHoliday</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Résumé des NA pour ventes_test</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>na_summary_ventes_test <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">colnames</span>(ventes_test),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">NA_Count =</span> <span class="fu">colSums</span>(<span class="fu">is.na</span>(ventes_test)),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">NA_Percentage =</span> <span class="fu">round</span>(<span class="fu">colSums</span>(<span class="fu">is.na</span>(ventes_test)) <span class="sc">/</span> <span class="fu">nrow</span>(ventes_test) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le tableau formaté</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>na_summary_ventes_test <span class="sc">%&gt;%</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Résumé des Valeurs Manquantes pour ventes_test"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>), </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">position =</span> <span class="st">"center"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#ff784e"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">background =</span> <span class="st">"#607d8b"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
+<caption>Résumé des Valeurs Manquantes pour ventes_test</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">NA_Count</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">NA_Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Id</td>
+<td style="text-align: left;">Id</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Store</td>
+<td style="text-align: left;">Store</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">DayOfWeek</td>
+<td style="text-align: left;">DayOfWeek</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Date</td>
+<td style="text-align: left;">Date</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Open</td>
+<td style="text-align: left;">Open</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Promo</td>
+<td style="text-align: left;">Promo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">StateHoliday</td>
+<td style="text-align: left;">StateHoliday</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">SchoolHoliday</td>
+<td style="text-align: left;">SchoolHoliday</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Résumé des NA pour store</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>na_summary_store <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">colnames</span>(store),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">NA_Count =</span> <span class="fu">colSums</span>(<span class="fu">is.na</span>(store)),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">NA_Percentage =</span> <span class="fu">round</span>(<span class="fu">colSums</span>(<span class="fu">is.na</span>(store)) <span class="sc">/</span> <span class="fu">nrow</span>(store) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le tableau formaté</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>na_summary_store <span class="sc">%&gt;%</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">"Résumé des Valeurs Manquantes pour store"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>, <span class="st">"condensed"</span>, <span class="st">"responsive"</span>), </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">position =</span> <span class="st">"center"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#ff784e"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">0</span>, <span class="at">background =</span> <span class="st">"#607d8b"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-condensed table-sm small" data-quarto-postprocess="true">
+<caption>Résumé des Valeurs Manquantes pour store</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">Variable</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">NA_Count</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(96, 125, 139, 255) !important;">NA_Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Store</td>
+<td style="text-align: left;">Store</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">StoreType</td>
+<td style="text-align: left;">StoreType</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Assortment</td>
+<td style="text-align: left;">Assortment</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">CompetitionDistance</td>
+<td style="text-align: left;">CompetitionDistance</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">CompetitionOpenSinceMonth</td>
+<td style="text-align: left;">CompetitionOpenSinceMonth</td>
+<td style="text-align: right;">354</td>
+<td style="text-align: right;">31.7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">CompetitionOpenSinceYear</td>
+<td style="text-align: left;">CompetitionOpenSinceYear</td>
+<td style="text-align: right;">354</td>
+<td style="text-align: right;">31.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Promo2</td>
+<td style="text-align: left;">Promo2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Promo2SinceWeek</td>
+<td style="text-align: left;">Promo2SinceWeek</td>
+<td style="text-align: right;">544</td>
+<td style="text-align: right;">48.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">Promo2SinceYear</td>
+<td style="text-align: left;">Promo2SinceYear</td>
+<td style="text-align: right;">544</td>
+<td style="text-align: right;">48.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold; color: rgba(255, 120, 78, 255) !important;">PromoInterval</td>
+<td style="text-align: left;">PromoInterval</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
 
 
 </section>
