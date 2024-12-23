@@ -142,7 +142,7 @@ summary_store %>%
 
 ```
 
-## Les données manquantes 
+## Les données manquantes
 
 ```{r}
 # Résumé des NA pour ventes_train

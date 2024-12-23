@@ -1,0 +1,146 @@
+---
+title: "Présentation, Nettoyage et Transformations des Données Brutes"
+author: "Black Phoenix Data Analysis"
+date: "`r Sys.Date()`"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    code-fold: true
+    theme: "null"
+    css: Templates/black_phoenix_professional.css
+execute:
+  warning: false
+  message: false
+---
+
+# 1. Introduction
+
+Ce document fournit une vue d'ensemble des données brutes utilisées pour ce projet, ainsi qu'un résumé des étapes de nettoyage et de transformation réalisées dans les scripts 01_import_data.R et 02_clean_data.R. Ces données servent de base aux analyses exploratoires et modélisations ultérieures.
+
+# 2. Description des Données Brutes
+
+## 2.1 Jeux de Données Importés
+
+Les jeux de données proviennent de fichiers CSV :
+
+| Jeu de Données | Description                                         |
+|----------------|-----------------------------------------------------|
+| ventes_train   | Historique des ventes pour entraîner les modèles.   |
+| ventes_test    | Données de test pour valider les modèles.           |
+| store          | Informations sur les caractéristiques des magasins. |
+
+## 2.2 Dimensions des Données Brutes
+
+```{r}
+library(tidyverse)
+library(kableExtra)
+
+# Charger les données brutes
+ventes_train <- read.csv("C:/Users/od-sciences/Documents/Analyse_Data_Science_Portfolio/Data/raw/ventes_ech_train.csv")
+ventes_test <- read.csv("C:/Users/od-sciences/Documents/Analyse_Data_Science_Portfolio/Data/raw/ventes_ech_test.csv")
+store <- read.csv("C:/Users/od-sciences/Documents/Analyse_Data_Science_Portfolio/Data/raw/store.csv")
+
+# Tableau des dimensions avec mise en forme Black Phoenix
+dimensions_brutes <- data.frame(
+  Jeu_de_Donnees = c("ventes_train", "ventes_test", "store"),
+  Nombre_Lignes = c(nrow(ventes_train), nrow(ventes_test), nrow(store)),
+  Nombre_Colonnes = c(ncol(ventes_train), ncol(ventes_test), ncol(store))
+)
+
+dimensions_brutes %>%
+  kbl(caption = "Dimensions des Jeux de Données Brutes") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE, position = "center") %>%
+  column_spec(1, bold = TRUE, color = "#ff784e") %>%
+  row_spec(0, background = "#607d8b", color = "white", bold = TRUE) %>%
+  row_spec(1:nrow(dimensions_brutes), background = "#f9f9f9", color = "#333333")
+
+```
+
+# 3. Étapes de Nettoyage et Transformations
+
+## 3.1 Renommage des Colonnes
+
+Dans le script `02_clean_data.R`, les colonnes ont été renommées pour plus de clarté :
+
+-   `Store` → `Magasin`
+
+-   `Sales` → `Ventes`
+
+-   `CompetitionDistance` → `Distance_Concurrent`
+
+## 3.2 Création de la Nouvelle Variable `Promo2_Participation`
+
+Une nouvelle variable **`Promo2_Participation`** a été introduite pour indiquer si un magasin participe ou non à `Promo2` :
+
+-   **Participant** : Le magasin participe à une promotion continue.
+
+-   **Non participant** : Le magasin ne participe pas à `Promo2`.
+
+Cette variable facilite l\'analyse des différences entre les magasins participants et non participants.
+
+```{r}
+# Visualisation des participants et non participants
+store %>%
+  mutate(Promo2_Participation = ifelse(is.na(Promo2SinceWeek), "Non participant", "Participant")) %>%
+  count(Promo2_Participation) %>%
+  kbl(caption = "Répartition des Magasins par Participation à Promo2") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE, position = "center") %>%
+  column_spec(1, bold = TRUE, color = "#ff784e") %>%
+  row_spec(0, background = "#607d8b", color = "white", bold = TRUE) %>%
+  row_spec(1:2, background = "#f9f9f9", color = "#333333")
+
+```
+
+## 3.3 Traitement des Valeurs Manquantes
+
+Le tableau ci-dessous résume les valeurs manquantes dans le fichier `store` :
+
+```{r}
+# Résumé des NA pour le fichier store
+na_summary <- function(data) {
+  data.frame(
+    Variable = colnames(data),
+    NA_Count = sapply(data, function(x) sum(is.na(x))),
+    NA_Percentage = round(sapply(data, function(x) mean(is.na(x)) * 100), 2)
+  ) %>% filter(NA_Count > 0) %>% arrange(desc(NA_Percentage))
+}
+
+na_summary(store) %>%
+  kbl(caption = "Résumé des Valeurs Manquantes pour store") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE, position = "center") %>%
+  column_spec(1, bold = TRUE, color = "#ff784e") %>%
+  row_spec(0, background = "#607d8b", color = "white", bold = TRUE) %>%
+  row_spec(1:nrow(na_summary(store)), background = "#f9f9f9", color = "#333333")
+
+```
+
+## 4. Résultats des Transformations
+
+## Dimensions Après Nettoyage
+
+```{r}
+# Dimensions après nettoyage
+dimensions_apres <- data.frame(
+  Jeu_de_Donnees = c("ventes_train", "ventes_test", "store"),
+  Nombre_Lignes = c(nrow(ventes_train), nrow(ventes_test), nrow(store)),
+  Nombre_Colonnes = c(ncol(ventes_train), ncol(ventes_test), ncol(store))
+)
+
+dimensions_apres %>%
+  kbl(caption = "Dimensions des Jeux de Données Après Nettoyage") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE, position = "center") %>%
+  column_spec(1, bold = TRUE, color = "#ff784e") %>%
+  row_spec(0, background = "#607d8b", color = "white", bold = TRUE) %>%
+  row_spec(1:nrow(dimensions_apres), background = "#f9f9f9", color = "#333333")
+
+```
+
+# 5. Conclusion
+
+Les données ont été nettoyées et transformées pour garantir leur cohérence et leur lisibilité. Ces opérations incluent le renommage des colonnes, la gestion des valeurs manquantes, et la création de la variable `Promo2_Participation`. Ces données sont désormais prêtes pour les analyses exploratoires et modélisations ultérieures.

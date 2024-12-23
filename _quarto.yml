@@ -8,6 +8,8 @@ website:
     left:
       - href: index.qmd
         text: Accueil
+      - href: Documents/Doc0_Donnees_Brutes_et_Transformations.html
+        text: Présentation des Données
       - href: Documents/Doc1_Analyse_Exploratoire.html
         text: Analyse Exploratoire
     right:

@@ -2,68 +2,158 @@
 # Script pour nettoyer et préparer les données pour l'analyse exploratoire et la modélisation
 
 # Charger les librairies nécessaires
-library(tidyverse) # Pour la manipulation de données
+library(tidyverse)  # Pour la manipulation des données
+library(ggplot2)    # Pour les visualisations
 
-# Charger les données importées
-# Les données ont été sauvegardées dans le script 01_import_data.R
+# Étape 1 : Charger les données importées
 load("Data/processed/imported_data.RData")
 
-# Afficher les dimensions initiales des données
-# Cette étape permet de vérifier combien de lignes et de colonnes contiennent chaque dataset avant toute modification
-cat("Dimensions initiales des données :\n")
+# Vérifications initiales
+cat("Dimensions des données avant nettoyage :\n")
 cat("ventes_train :", dim(ventes_train), "\n")
 cat("ventes_test :", dim(ventes_test), "\n")
 cat("store :", dim(store), "\n")
 
-# Vérification des valeurs manquantes
-# On identifie les colonnes contenant des valeurs manquantes pour savoir lesquelles nécessitent un traitement
-cat("Valeurs manquantes par colonne :\n")
-ventes_train_na <- colSums(is.na(ventes_train)) # Nombre de NA par colonne dans ventes_train
-ventes_test_na <- colSums(is.na(ventes_test))   # Nombre de NA par colonne dans ventes_test
-store_na <- colSums(is.na(store))               # Nombre de NA par colonne dans store
+# Étape 2 : Identifier les valeurs manquantes
+calculate_na_summary <- function(data) {
+  data.frame(
+    Variable = colnames(data),
+    NA_Count = colSums(is.na(data)),
+    NA_Percentage = round(colSums(is.na(data)) / nrow(data) * 100, 2)
+  ) %>% arrange(desc(NA_Percentage))
+}
 
-# Afficher uniquement les colonnes ayant des valeurs manquantes
-cat("ventes_train :\n")
-print(ventes_train_na[ventes_train_na > 0])
-cat("ventes_test :\n")
-print(ventes_test_na[ventes_test_na > 0])
-cat("store :\n")
-print(store_na[store_na > 0])
+na_summary_store <- calculate_na_summary(store)
+cat("\nRésumé des valeurs manquantes pour store :\n")
+print(na_summary_store)
 
-# Traitement des valeurs manquantes
-# Exemple 1 : Remplacer tous les NA par 0 dans ventes_train et ventes_test
-# Cette opération est justifiée si les NA indiquent une absence de ventes
-ventes_train[is.na(ventes_train)] <- 0
-ventes_test[is.na(ventes_test)] <- 0
+# Visualisation des NA par variable
+na_summary_store %>%
+  ggplot(aes(x = reorder(Variable, -NA_Percentage), y = NA_Percentage, fill = NA_Percentage)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Pourcentage de NA par variable (store)", x = "Variable", y = "Pourcentage de NA") +
+  theme_minimal() +
+  coord_flip()
 
-# Exemple 2 : Remplacer les NA dans CompetitionDistance par la médiane
-# Cette colonne peut avoir des NA si la distance avec un concurrent n'est pas connue.
-# On remplace les NA par la médiane pour éviter de fausser les analyses
+# Étape 3 : Traitement des valeurs manquantes
+## 3.1 Variables liées à Promo2
+store <- store %>%
+  mutate(
+    Promo2_Participation = ifelse(is.na(Promo2SinceWeek), "Non participant", "Participant"),
+    Promo2SinceWeek = ifelse(is.na(Promo2SinceWeek), 0, Promo2SinceWeek),
+    Promo2SinceYear = ifelse(is.na(Promo2SinceYear), 0, Promo2SinceYear)
+  )
+
+# Visualisation de la distribution des participants/non participants à Promo2
+store %>%
+  ggplot(aes(x = Promo2_Participation, fill = Promo2_Participation)) +
+  geom_bar() +
+  labs(title = "Distribution des magasins participants à Promo2", x = "Participation", y = "Nombre de magasins") +
+  theme_minimal()
+
+## 3.2 Variables liées à Competition
+store <- store %>%
+  mutate(
+    CompetitionOpenSinceMonth = ifelse(is.na(CompetitionOpenSinceMonth), 0, CompetitionOpenSinceMonth),
+    CompetitionOpenSinceYear = ifelse(is.na(CompetitionOpenSinceYear), 0, CompetitionOpenSinceYear)
+  )
+
 store <- store %>%
   mutate(
     CompetitionDistance = ifelse(is.na(CompetitionDistance), median(CompetitionDistance, na.rm = TRUE), CompetitionDistance)
   )
 
-# Conversion des colonnes en facteurs
-# Les variables catégoriques doivent être converties en facteur pour les analyses statistiques et la modélisation
+
 ventes_train <- ventes_train %>%
-  mutate(Store = as.factor(Store)) # Le numéro de magasin est une catégorie, pas une variable numérique continue
+  mutate(Date = as.Date(Date))
+
+ventes_train %>%
+  ggplot(aes(x = Date)) +
+  geom_histogram(binwidth = 30, fill = "#ff784e") +
+  labs(title = "Distribution des dates dans ventes_train", x = "Date", y = "Nombre d'observations") +
+  theme_minimal()
+
+
+
+
+# Visualisation de CompetitionDistance après traitement
+ggplot(store, aes(x = CompetitionDistance)) +
+  geom_histogram(fill = "#4fc3f7", bins = 30) +
+  labs(title = "Distribution de CompetitionDistance après traitement", x = "CompetitionDistance", y = "Fréquence") +
+  theme_minimal()
+
+# Étape 4 : Vérification et visualisations des dates
+ventes_train %>%
+  ggplot(aes(x = Date)) +
+  geom_histogram(fill = "#ff784e", bins = 30) +
+  labs(title = "Distribution des dates dans ventes_train", x = "Date", y = "Nombre d'observations") +
+  theme_minimal()
+
+# Étape 5 : Conversion des types de données
+ventes_train <- ventes_train %>%
+  mutate(
+    Store = as.factor(Store),
+    DayOfWeek = as.factor(DayOfWeek)
+  )
 
 store <- store %>%
   mutate(
-    StoreType = as.factor(StoreType),  # Type de magasin (a, b, c, d)
-    Assortment = as.factor(Assortment) # Niveau d'assortiment (a, b, c)
+    StoreType = as.factor(StoreType),
+    Assortment = as.factor(Assortment),
+    Promo2_Participation = as.factor(Promo2_Participation)
   )
 
-# Suppression des colonnes inutiles ou redondantes
-# Exemple : Suppression de la colonne Customers dans ventes_train
-# Cette colonne pourrait être fortement corrélée à Sales, donc redondante pour certaines analyses
 ventes_train <- ventes_train %>%
-  select(-Customers)
+  mutate(Date = as.Date(Date))
+ventes_test <- ventes_test %>%
+  mutate(Date = as.Date(Date))
 
-# Sauvegarder les données nettoyées
-# Une fois les données nettoyées, on les sauvegarde dans un fichier pour les utiliser dans les étapes suivantes
+# Renommer les colonnes dans store
+store <- store %>%
+  rename(
+    Magasin = Store,
+    Type_Magasin = StoreType,
+    Assortiment = Assortment,
+    Distance_Concurrent = CompetitionDistance,
+    Mois_Ouverture_Concurrent = CompetitionOpenSinceMonth,
+    Annee_Ouverture_Concurrent = CompetitionOpenSinceYear,
+    Promotion_Continue = Promo2,
+    Semaine_Debut_Promo2 = Promo2SinceWeek,
+    Annee_Debut_Promo2 = Promo2SinceYear,
+    Intervalle_Promo = PromoInterval
+  )
+
+# Vérification après renommage
+cat("Colonnes de store après renommage :\n")
+print(colnames(store))
+
+# Renommer les colonnes dans ventes_train
+ventes_train <- ventes_train %>%
+  rename(
+    Magasin = Store,
+    Jour_Semaine = DayOfWeek,
+    Date = Date,
+    Ventes = Sales,
+    Clients = Customers,
+    Ouvert = Open,
+    Promotion = Promo,
+    Vacances_Scolaires = SchoolHoliday
+  )
+
+# Vérification après renommage
+cat("\nColonnes de ventes_train après renommage :\n")
+print(colnames(ventes_train))
+
+summary(ventes_train)
+summary(store)
+
+ggplot(ventes_train, aes(x = Ventes)) +
+  geom_histogram(fill = "#4fc3f7", bins = 30) +
+  labs(title = "Distribution des ventes après renommage", x = "Ventes", y = "Fréquence")
+
+
+
+# Étape 6 : Sauvegarde des données nettoyées
 save(ventes_train, ventes_test, store, file = "Data/processed/cleaned_data.RData")
 
-# Afficher un message de fin pour confirmer la réussite du processus
-cat("Nettoyage terminé. Les données sont sauvegardées dans Data/processed/cleaned_data.RData.\n")
+cat("\nNettoyage terminé. Les données sont sauvegardées dans 'Data/processed/cleaned_data.RData'.\n")
