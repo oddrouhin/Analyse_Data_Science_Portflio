@@ -12,9 +12,14 @@ website:
         text: Présentation des Données
       - href: Documents/Doc1_Analyse_Exploratoire.html
         text: Analyse Exploratoire
+      - text: Rapports d'Avancement
+        menu:
+          - text: Rapport "#1"
+            href: Documents/rapports/rapport_avancement_1.html
     right:
       - icon: github
         href: https://github.com/oddrouhin/Analyse_Data_Science_Portflio
+
   page-footer:
     center: "© 2025 Black Phoenix Data Analysis"
 

@@ -72,3 +72,26 @@ ggsave("Graphiques/eda/moyenne_ventes_jour_semaine.png", width = 8, height = 5)
 # Sauvegarde des données transformées et visualisations
 cat("\nLes analyses exploratoires et visualisations sont terminées.\nLes graphiques sont enregistrés dans le dossier Graphiques/eda.")
 
+# 6. Analyse de l'effet des promotions et des vacances scolaires
+
+# Moyenne des ventes avec et sans promotion
+ggplot(ventes_train, aes(x = factor(Promotion), y = Ventes)) +
+  geom_boxplot(fill = "#4fc3f7", color = "black") +
+  labs(title = "Effet des Promotions sur les Ventes", x = "Promotion", y = "Ventes") +
+  theme_minimal()
+ggsave("Graphiques/eda/effet_promotions.png", width = 8, height = 5)
+
+# Moyenne des ventes pendant et hors vacances scolaires
+ggplot(ventes_train, aes(x = factor(Vacances_Scolaires), y = Ventes)) +
+  geom_boxplot(fill = "#4fc3f7", color = "black") +
+  labs(title = "Effet des Vacances Scolaires sur les Ventes", x = "Vacances Scolaires", y = "Ventes") +
+  theme_minimal()
+ggsave("Graphiques/eda/effet_vacances.png", width = 8, height = 5)
+
+# Sauvegarde des données transformées et visualisations
+cat("\nLes analyses exploratoires et visualisations sont terminées.\nLes graphiques sont enregistrés dans le dossier Graphiques/eda.")
+
+
+
+
+

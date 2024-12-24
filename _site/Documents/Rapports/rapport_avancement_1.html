@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Black Phoenix Data Analysis">
-<meta name="dcterms.date" content="2025-01-01">
 
-<title>Analyse Data Science Portfolio</title>
+<title>Analyse Data Science Portfolio - Rapport d’Avancement #1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,25 +21,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="Templates/black_phoenix_professional.css">
-<link rel="stylesheet" href="Documents/Templates/black_phoenix_professional.css">
+<link rel="stylesheet" href="../../Documents/Templates/black_phoenix_professional.css">
 </head>
 
 <body class="floating nav-fixed">
@@ -73,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Analyse Data Science Portfolio</span>
     </a>
   </div>
@@ -84,15 +117,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Documents/Doc0_Donnees_Brutes_et_Transformations.html" rel="" target="">
+    <a class="nav-link" href="../../Documents/Doc0_Donnees_Brutes_et_Transformations.html" rel="" target="">
  <span class="menu-text">Présentation des Données</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Documents/Doc1_Analyse_Exploratoire.html" rel="" target="">
+    <a class="nav-link" href="../../Documents/Doc1_Analyse_Exploratoire.html" rel="" target="">
  <span class="menu-text">Analyse Exploratoire</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -101,8 +134,8 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rapports-davancement">    
         <li>
-    <a class="dropdown-item" href="./Documents/rapports/rapport_avancement_1.html" rel="" target="">
- <span class="dropdown-text">Rapport "#1"</span></a>
+    <a class="dropdown-item" href="../../Documents/rapports/rapport_avancement.qmd" rel="" target="">
+ <span class="dropdown-text">Rapport</span></a>
   </li>  
     </ul>
   </li>
@@ -128,12 +161,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#bienvenue-sur-lanalyse-data-science-portfolio" id="toc-bienvenue-sur-lanalyse-data-science-portfolio" class="nav-link active" data-scroll-target="#bienvenue-sur-lanalyse-data-science-portfolio"><span class="header-section-number">1</span> Bienvenue sur l’Analyse Data Science Portfolio</a>
-  <ul class="collapse">
-  <li><a href="#contenu-du-portfolio" id="toc-contenu-du-portfolio" class="nav-link" data-scroll-target="#contenu-du-portfolio"><span class="header-section-number">1.2</span> Contenu du Portfolio</a></li>
-  <li><a href="#structure-du-projet" id="toc-structure-du-projet" class="nav-link" data-scroll-target="#structure-du-projet"><span class="header-section-number">1.3</span> Structure du Projet</a></li>
-  <li><a href="#à-propos" id="toc-à-propos" class="nav-link" data-scroll-target="#à-propos"><span class="header-section-number">1.4</span> À propos</a></li>
-  </ul></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> 1. Introduction</a></li>
+  <li><a href="#résumé-des-tâches-réalisées" id="toc-résumé-des-tâches-réalisées" class="nav-link" data-scroll-target="#résumé-des-tâches-réalisées"><span class="header-section-number">2</span> 3. Résumé des Tâches Réalisées</a></li>
+  <li><a href="#planification-deux-semaines-à-venir" id="toc-planification-deux-semaines-à-venir" class="nav-link" data-scroll-target="#planification-deux-semaines-à-venir"><span class="header-section-number">3</span> 4. Planification : Deux Semaines à Venir</a></li>
+  <li><a href="#objectifs-clés-pour-les-deux-prochaines-semaines" id="toc-objectifs-clés-pour-les-deux-prochaines-semaines" class="nav-link" data-scroll-target="#objectifs-clés-pour-les-deux-prochaines-semaines"><span class="header-section-number">4</span> 5. Objectifs Clés pour les Deux Prochaines Semaines</a></li>
   </ul>
 </nav>
 </nav>
@@ -146,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analyse Data Science Portfolio</h1>
+<h1 class="title">Rapport d’Avancement #1</h1>
 </div>
 
 
@@ -163,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 1, 2025</p>
+      <p class="date">Invalid Date</p>
     </div>
   </div>
   
@@ -173,93 +204,124 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<header>
-<img src="Images/Black_Phoenix_Data_Analysis_Logo.jpg" alt="Logo Black Phoenix" id="logo-large">
-</header>
-<section id="bienvenue-sur-lanalyse-data-science-portfolio" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Bienvenue sur l’Analyse Data Science Portfolio</h1>
-<p>Cette page d’accueil présente un résumé des analyses réalisées dans le cadre du projet <strong>Black Phoenix Data Analysis</strong>. Vous y trouverez une structure organisée et des documents détaillant chaque étape du projet.</p>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> 1. Introduction</h2>
+<p>Ce rapport couvre les avancements réalisés entre le 18 et le 23 décembre 2024. Il présente les tâches accomplies, leur positionnement sur le diagramme de Gantt, ainsi que les priorités pour les deux semaines à venir.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Données du diagramme de Gantt mises à jour</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>gantt_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Tache =</span> <span class="fu">c</span>(<span class="st">"Script 01 : Importation"</span>, <span class="st">"Script 02 : Nettoyage"</span>, <span class="st">"Doc0 : Présentation des Données"</span>, </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Script 03 : Analyse Exploratoire"</span>),</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Debut =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"2024-12-01"</span>, <span class="st">"2024-12-08"</span>, <span class="st">"2024-12-18"</span>, <span class="st">"2024-12-24"</span>)),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Fin =</span> <span class="fu">as.Date</span>(<span class="fu">c</span>(<span class="st">"2024-12-07"</span>, <span class="st">"2024-12-17"</span>, <span class="st">"2024-12-23"</span>, <span class="st">"2025-01-10"</span>)),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Statut =</span> <span class="fu">c</span>(<span class="st">"Terminé"</span>, <span class="st">"Terminé"</span>, <span class="st">"Terminé"</span>, <span class="st">"En cours"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Diagramme de Gantt</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>gantt_data <span class="sc">%&gt;%</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Debut, <span class="at">xend =</span> Fin, <span class="at">y =</span> Tache, <span class="at">yend =</span> Tache, <span class="at">color =</span> Statut)) <span class="sc">+</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="at">size =</span> <span class="dv">6</span>) <span class="sc">+</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Terminé"</span> <span class="ot">=</span> <span class="st">"#4CAF50"</span>, <span class="st">"En cours"</span> <span class="ot">=</span> <span class="st">"#FFC107"</span>)) <span class="sc">+</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"État d'Avancement sur le Diagramme de Gantt"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Tâches"</span>, <span class="at">color =</span> <span class="st">"Statut"</span>) <span class="sc">+</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="rapport_avancement_1_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="résumé-des-tâches-réalisées" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="résumé-des-tâches-réalisées"><span class="header-section-number">2</span> 3. Résumé des Tâches Réalisées</h2>
 <table class="table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 9%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tâche</th>
+<th>Statut</th>
+<th>Résultats Clés</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><h2 id="les-données-ventes-en-magasin-rossmann" data-number="1.1" class="anchored" data-anchor-id="bienvenue-sur-lanalyse-data-science-portfolio"><span class="header-section-number">1.1</span> Les données : Ventes en magasin Rossmann</h2>
-<p><a href="https://www.kaggle.com/competitions/rossmann-store-sales/data" class="uri">https://www.kaggle.com/competitions/rossmann-store-sales/data</a></p>
-<h3 id="objectif-principal-du-projet" data-number="1.1.1" class="anchored"><span class="header-section-number">1.1.1</span> Objectif principal du projet</h3>
-<p><strong>Prévoir les ventes et la fréquentation à l’aide des données du magasin, des promotions et des concurrents</strong></p></td>
+<td>Script 01 : Importation</td>
+<td>Terminé</td>
+<td>Importation des données brutes, sauvegarde en RData.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><h3 id="description-du-contexte" data-number="1.1.2" class="anchored"><span class="header-section-number">1.1.2</span> Description du contexte</h3></td>
+<td>Script 02 : Nettoyage</td>
+<td>Terminé</td>
+<td>Renommage, traitement des NA, création de <code>Promo2_Participation</code>.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Rossmann exploite plus de 3 000 pharmacies dans 7 pays européens. Actuellement, les gérants des magasins Rossmann sont chargés de prévoir leurs ventes quotidiennes jusqu’à six semaines à l’avance. Les ventes en magasin sont influencées par de nombreux facteurs, notamment les promotions, la concurrence, les vacances scolaires et nationales, la saisonnalité et la localité. Avec des milliers de managers individuels prédisant les ventes en fonction de leur situation unique, la précision des résultats peut être très variable.</td>
+<td>Doc0 : Présentation des Données</td>
+<td>Terminé</td>
+<td>Document Quarto créé, résultats formatés avec Black Phoenix.</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Lors de son premier concours Kaggle, Rossmann vous met au défi de prédire 6 semaines de ventes quotidiennes pour 1 115 magasins situés dans toute l’Allemagne. Des prévisions de ventes fiables permettent aux gérants de magasin de créer des horaires de personnel efficaces qui augmentent la productivité et la motivation. En aidant Rossmann à créer un modèle de prédiction robuste, vous aiderez les gérants de magasin à rester concentrés sur ce qui est le plus important pour eux : leurs clients et leurs équipes !</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><h3 id="description-de-lensemble-de-données" data-number="1.1.3" class="anchored"><span class="header-section-number">1.1.3</span> Description de l’ensemble de données</h3></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Vous disposez de données de ventes historiques pour 1 115 magasins Rossmann. La tâche consiste à prévoir la colonne « Ventes » pour l’ensemble de test. Notez que certains magasins de l’ensemble de données ont été temporairement fermés pour rénovation.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><h3 id="fichiers-de-données" data-number="1.1.4" class="anchored"><span class="header-section-number">1.1.4</span> Fichiers de données</h3>
-<ul>
-<li><p><strong>train.csv</strong> - données historiques, y compris les ventes</p></li>
-<li><p><strong>test.csv</strong> - données historiques hors ventes</p></li>
-<li><p><strong>store.csv</strong> - informations supplémentaires sur les magasins</p></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><h3 id="champs-de-données" data-number="1.1.5" class="anchored"><span class="header-section-number">1.1.5</span> Champs de données</h3>
-<p>La plupart des champs sont explicites. Voici les descriptions de ceux qui ne le sont pas.</p>
-<ul>
-<li><p><strong>Id</strong> - un identifiant qui représente un double (Store, Date) dans l’ensemble de test</p></li>
-<li><p><strong>Magasin</strong> - un identifiant unique pour chaque magasin</p></li>
-<li><p><strong>Ventes</strong> - le chiffre d’affaires pour un jour donné (c’est ce que vous prédisez)</p></li>
-<li><p><strong>Clients</strong> - le nombre de clients un jour donné</p></li>
-<li><p><strong>Ouvert</strong> - un indicateur indiquant si le magasin était ouvert&nbsp;: 0 = fermé, 1 = ouvert</p></li>
-<li><p><strong>StateHoliday</strong> - indique un jour férié. Normalement, tous les magasins, à quelques exceptions près, sont fermés les jours fériés. A noter que toutes les écoles sont fermées les jours fériés et les week-ends. a = jour férié, b = vacances de Pâques, c = Noël, 0 = aucun</p></li>
-<li><p><strong>SchoolHoliday</strong> - indique si le (Magasin, Date) a été affecté par la fermeture des écoles publiques</p></li>
-<li><p><strong>StoreType</strong> - différencie 4 modèles de magasins différents&nbsp;: a, b, c, d</p></li>
-<li><p><strong>Assortiment</strong> - décrit un niveau d’assortiment&nbsp;: a = basique, b = extra, c = étendu</p></li>
-<li><p><strong>CompetitionDistance</strong> - distance en mètres jusqu’au magasin concurrent le plus proche</p></li>
-<li><p><strong>CompetitionOpenSince[Mois/Année]</strong> - donne l’année et le mois approximatifs de l’ouverture du concurrent le plus proche.</p></li>
-<li><p><strong>Promo</strong> &nbsp;: indique si un magasin propose une promotion ce jour-là.</p></li>
-<li><p><strong>Promo2</strong> - Promo2 est une promotion continue et consécutive pour certains magasins&nbsp;: 0 = le magasin ne participe pas, 1 = le magasin participe</p></li>
-<li><p><strong>Promo2Since[Year/Week]</strong> &nbsp;: décrit l’année et la semaine civile au cours desquelles le magasin a commencé à participer à Promo2.</p></li>
-<li><p><strong>PromoInterval</strong> - décrit les intervalles consécutifs de démarrage de Promo2, en nommant les mois pendant lesquels la promotion est relancée. Par exemple, « février, mai, août, novembre » signifie que chaque cycle commence en février, mai, août et novembre d’une année donnée pour ce magasin.</p></li>
-</ul></td>
+<td>Script 03 : Analyse Exploratoire</td>
+<td>En cours</td>
+<td>Début des visualisations et analyse des corrélations.</td>
 </tr>
 </tbody>
 </table>
-<section id="contenu-du-portfolio" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="contenu-du-portfolio"><span class="header-section-number">1.2</span> Contenu du Portfolio</h2>
+</section>
+<section id="planification-deux-semaines-à-venir" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="planification-deux-semaines-à-venir"><span class="header-section-number">3</span> 4. Planification : Deux Semaines à Venir</h2>
+<section id="tâches-prioritaires" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="tâches-prioritaires"><span class="header-section-number">3.1</span> 4.1 Tâches Prioritaires</h3>
+<table class="table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tâche</th>
+<th>Date Début</th>
+<th>Date Fin</th>
+<th>Objectif Clé</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Finaliser Script 03</td>
+<td>24 Décembre 2024</td>
+<td>5 Janvier 2025</td>
+<td>Analyse exploratoire et visualisations.</td>
+</tr>
+<tr class="even">
+<td>Rédiger Doc1</td>
+<td>6 Janvier 2025</td>
+<td>10 Janvier 2025</td>
+<td>Intégrer les résultats de l’analyse exploratoire.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="objectifs-clés-pour-les-deux-prochaines-semaines" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="objectifs-clés-pour-les-deux-prochaines-semaines"><span class="header-section-number">4</span> 5. Objectifs Clés pour les Deux Prochaines Semaines</h2>
 <ul>
-<li><p><a href="Documents/Doc1_Analyse_Exploratoire.html"><strong>Analyse Exploratoire des Données (EDA)</strong></a><br>
-Présentation des données, visualisation initiale, et résumé statistique.</p></li>
-<li><p><strong>Segmentation des Données</strong><br>
-Application des algorithmes K-means et CAH pour segmenter les données.</p></li>
-<li><p><strong>Modélisation Prédictive</strong><br>
-Modèles statistiques et machine learning pour prédire les variables cibles.</p></li>
-<li><p><strong>Synthèse Finale</strong><br>
-Rapport final consolidant les résultats et conclusions des analyses.</p></li>
+<li><p>Compléter toutes les visualisations pour <code>Script 03</code>.</p></li>
+<li><p>Produire un document synthétique (Doc1) présentant les résultats exploratoires.</p></li>
+<li><p>S’assurer que toutes les données nettoyées et analysées sont sauvegardées proprement.</p></li>
 </ul>
-<hr>
-</section>
-<section id="structure-du-projet" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="structure-du-projet"><span class="header-section-number">1.3</span> Structure du Projet</h2>
-<p>Le portfolio est organisé de manière à faciliter la compréhension et l’exploration des données. Chaque document représente une étape du projet.</p>
-<hr>
-</section>
-<section id="à-propos" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="à-propos"><span class="header-section-number">1.4</span> À propos</h2>
-<p>Ce portfolio a été développé par <strong>Black Phoenix Data Analysis</strong> dans le cadre d’une analyse approfondie pour un projet Data Science.<br>
-L’identité visuelle et les analyses s’appuient sur des pratiques professionnelles et des outils avancés.</p>
-<hr>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

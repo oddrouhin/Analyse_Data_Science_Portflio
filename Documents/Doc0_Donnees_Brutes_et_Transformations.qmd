@@ -79,7 +79,7 @@ Une nouvelle variable **`Promo2_Participation`** a été introduite pour indique
 
 -   **Non participant** : Le magasin ne participe pas à `Promo2`.
 
-Cette variable facilite l\'analyse des différences entre les magasins participants et non participants.
+Cette variable facilite l'analyse des différences entre les magasins participants et non participants.
 
 ```{r}
 # Visualisation des participants et non participants

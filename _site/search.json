@@ -131,5 +131,40 @@
     "title": "Présentation, Nettoyage et Transformations des Données Brutes",
     "section": "3.5 Dimensions Après Nettoyage",
     "text": "3.5 Dimensions Après Nettoyage\n\n\nCode\n# Dimensions après nettoyage\ndimensions_apres &lt;- data.frame(\n  Jeu_de_Donnees = c(\"ventes_train\", \"ventes_test\", \"store\"),\n  Nombre_Lignes = c(nrow(ventes_train), nrow(ventes_test), nrow(store)),\n  Nombre_Colonnes = c(ncol(ventes_train), ncol(ventes_test), ncol(store))\n)\n\ndimensions_apres %&gt;%\n  kbl(caption = \"Dimensions des Jeux de Données Après Nettoyage\") %&gt;%\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"), \n                full_width = FALSE, position = \"center\") %&gt;%\n  column_spec(1, bold = TRUE, color = \"#ff784e\") %&gt;%\n  row_spec(0, background = \"#607d8b\", color = \"white\", bold = TRUE) %&gt;%\n  row_spec(1:nrow(dimensions_apres), background = \"#f9f9f9\", color = \"#333333\")\n\n\n\n\nDimensions des Jeux de Données Après Nettoyage\n\n\nJeu_de_Donnees\nNombre_Lignes\nNombre_Colonnes\n\n\n\n\nventes_train\n1017209\n9\n\n\nventes_test\n41088\n8\n\n\nstore\n1115\n10"
+  },
+  {
+    "objectID": "Documents/Rapports/rapport_avancement_1.html",
+    "href": "Documents/Rapports/rapport_avancement_1.html",
+    "title": "Rapport d’Avancement #1",
+    "section": "",
+    "text": "Ce rapport couvre les avancements réalisés entre le 18 et le 23 décembre 2024. Il présente les tâches accomplies, leur positionnement sur le diagramme de Gantt, ainsi que les priorités pour les deux semaines à venir.\n\n\nCode\nlibrary(tidyverse)\nlibrary(ggplot2)\n\n# Données du diagramme de Gantt mises à jour\ngantt_data &lt;- data.frame(\n  Tache = c(\"Script 01 : Importation\", \"Script 02 : Nettoyage\", \"Doc0 : Présentation des Données\", \n            \"Script 03 : Analyse Exploratoire\"),\n  Debut = as.Date(c(\"2024-12-01\", \"2024-12-08\", \"2024-12-18\", \"2024-12-24\")),\n  Fin = as.Date(c(\"2024-12-07\", \"2024-12-17\", \"2024-12-23\", \"2025-01-10\")),\n  Statut = c(\"Terminé\", \"Terminé\", \"Terminé\", \"En cours\")\n)\n\n# Diagramme de Gantt\ngantt_data %&gt;%\n  ggplot(aes(x = Debut, xend = Fin, y = Tache, yend = Tache, color = Statut)) +\n  geom_segment(size = 6) +\n  scale_color_manual(values = c(\"Terminé\" = \"#4CAF50\", \"En cours\" = \"#FFC107\")) +\n  labs(title = \"État d'Avancement sur le Diagramme de Gantt\",\n       x = \"Date\", y = \"Tâches\", color = \"Statut\") +\n  theme_minimal() +\n  theme(axis.text.y = element_text(size = 10, face = \"bold\"),\n        axis.text.x = element_text(size = 8))"
+  },
+  {
+    "objectID": "Documents/Rapports/rapport_avancement_1.html#résumé-des-tâches-réalisées",
+    "href": "Documents/Rapports/rapport_avancement_1.html#résumé-des-tâches-réalisées",
+    "title": "Rapport d’Avancement #1",
+    "section": "2 3. Résumé des Tâches Réalisées",
+    "text": "2 3. Résumé des Tâches Réalisées\n\n\n\n\n\n\n\n\nTâche\nStatut\nRésultats Clés\n\n\n\n\nScript 01 : Importation\nTerminé\nImportation des données brutes, sauvegarde en RData.\n\n\nScript 02 : Nettoyage\nTerminé\nRenommage, traitement des NA, création de Promo2_Participation.\n\n\nDoc0 : Présentation des Données\nTerminé\nDocument Quarto créé, résultats formatés avec Black Phoenix.\n\n\nScript 03 : Analyse Exploratoire\nEn cours\nDébut des visualisations et analyse des corrélations."
+  },
+  {
+    "objectID": "Documents/Rapports/rapport_avancement_1.html#planification-deux-semaines-à-venir",
+    "href": "Documents/Rapports/rapport_avancement_1.html#planification-deux-semaines-à-venir",
+    "title": "Rapport d’Avancement #1",
+    "section": "3 4. Planification : Deux Semaines à Venir",
+    "text": "3 4. Planification : Deux Semaines à Venir\n\n3.1 4.1 Tâches Prioritaires\n\n\n\n\n\n\n\n\n\nTâche\nDate Début\nDate Fin\nObjectif Clé\n\n\n\n\nFinaliser Script 03\n24 Décembre 2024\n5 Janvier 2025\nAnalyse exploratoire et visualisations.\n\n\nRédiger Doc1\n6 Janvier 2025\n10 Janvier 2025\nIntégrer les résultats de l’analyse exploratoire."
+  },
+  {
+    "objectID": "Documents/Rapports/rapport_avancement_1.html#objectifs-clés-pour-les-deux-prochaines-semaines",
+    "href": "Documents/Rapports/rapport_avancement_1.html#objectifs-clés-pour-les-deux-prochaines-semaines",
+    "title": "Rapport d’Avancement #1",
+    "section": "4 5. Objectifs Clés pour les Deux Prochaines Semaines",
+    "text": "4 5. Objectifs Clés pour les Deux Prochaines Semaines\n\nCompléter toutes les visualisations pour Script 03.\nProduire un document synthétique (Doc1) présentant les résultats exploratoires.\nS’assurer que toutes les données nettoyées et analysées sont sauvegardées proprement."
+  },
+  {
+    "objectID": "Documents/Rapports/rapport_avancement_1.html#introduction",
+    "href": "Documents/Rapports/rapport_avancement_1.html#introduction",
+    "title": "Rapport d’Avancement #1",
+    "section": "",
+    "text": "Ce rapport couvre les avancements réalisés entre le 18 et le 23 décembre 2024. Il présente les tâches accomplies, leur positionnement sur le diagramme de Gantt, ainsi que les priorités pour les deux semaines à venir.\n\n\nCode\nlibrary(tidyverse)\nlibrary(ggplot2)\n\n# Données du diagramme de Gantt mises à jour\ngantt_data &lt;- data.frame(\n  Tache = c(\"Script 01 : Importation\", \"Script 02 : Nettoyage\", \"Doc0 : Présentation des Données\", \n            \"Script 03 : Analyse Exploratoire\"),\n  Debut = as.Date(c(\"2024-12-01\", \"2024-12-08\", \"2024-12-18\", \"2024-12-24\")),\n  Fin = as.Date(c(\"2024-12-07\", \"2024-12-17\", \"2024-12-23\", \"2025-01-10\")),\n  Statut = c(\"Terminé\", \"Terminé\", \"Terminé\", \"En cours\")\n)\n\n# Diagramme de Gantt\ngantt_data %&gt;%\n  ggplot(aes(x = Debut, xend = Fin, y = Tache, yend = Tache, color = Statut)) +\n  geom_segment(size = 6) +\n  scale_color_manual(values = c(\"Terminé\" = \"#4CAF50\", \"En cours\" = \"#FFC107\")) +\n  labs(title = \"État d'Avancement sur le Diagramme de Gantt\",\n       x = \"Date\", y = \"Tâches\", color = \"Statut\") +\n  theme_minimal() +\n  theme(axis.text.y = element_text(size = 10, face = \"bold\"),\n        axis.text.x = element_text(size = 8))"
   }
 ]
